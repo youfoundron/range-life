@@ -5,5 +5,14 @@
   "main": "lib/index.js",
   "repository": "https://github.com/rongierlach/range-life.git",
   "author": "https://github.com/rongierlach",
-  "license": "GPL-3.0"
+  "license": "GPL-3.0",
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  },
+  "devDependencies": {
+    "commitizen": "^2.9.6",
+    "cz-conventional-changelog": "^2.0.0"
+  }
 }
