@@ -1,19 +1,17 @@
 # Range Life
-A little range function that supports stepped ranges of integers, decimals, letters, and even a supplied array of values.
+A range function that no one asked for.
+Supports stepped ranges of integers, decimals, letters, and even a supplied array of values.
 > "If I had a range life, then I could settle down." - Stephen Malkmus
 
 ## Installation
-`$ npm install range-life`
+`$ npm install range-life`  
+
+You may also use any of range-life's per-method packages:  
+`$ npm install range-life.standard`  
+`$ npm install range-life.alpha`  
+`$ npm install range-life.values`
 
 ## Usage
-
-### Arguments
-* [start=0] (number | letter): The start of the range.
-* end (number | letter): The end of the range.
-* [step=1] (number): The value to increment or decrement by.
-* values (Array): An array of values to slice.
-### Returns
-(Array): Returns the range of values.
 
 ```
 import range from 'range-life'
@@ -60,5 +58,4 @@ range(1, 3, values)
 
 range(1, Infinity, 1, values) 
 // => ['Zero', 'Two']
-
 ```
