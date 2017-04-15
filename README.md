@@ -30,19 +30,19 @@ range(0)
 
 range(4)
 // => [0, 1, 2, 3]
- 
+
 range(-4)
 // => [0, -1, -2, -3]
- 
+
 range(1, 5)
 // => [1, 2, 3, 4]
- 
+
 range(0, 20, 5)
 // => [0, 5, 10, 15]
- 
+
 range(0, -4, -1)
 // => [0, -1, -2, -3]
- 
+
 range(1, 4, 0)
 // => [1, 1, 1]
 
@@ -65,7 +65,7 @@ const values = ['Zero', 'One', 'Two', 'Three']
 range(1, 3, values)
 // => ['One', 'Two']
 
-range(1, Infinity, 1, values) 
+range(1, Infinity, 1, values)
 // => ['Zero', 'Two']
 ```
 
@@ -86,7 +86,7 @@ import range from 'range-life/standard'
 
 range(1, 5)
 // => [1, 2, 3, 4]
- 
+
 range(0, 20, 5)
 // => [0, 5, 10, 15]
 ```
@@ -117,7 +117,7 @@ Returns **[Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Refere
 
 
 
-### range-life/alpha
+### range-life/values
 
 **Parameters**
 
@@ -136,7 +136,7 @@ const values = ['Zero', 'One', 'Two', 'Three']
 range(1, 3, values)
 // => ['One', 'Two']
 
-range(1, Infinity, 1, values) 
+range(1, Infinity, 1, values)
 // => ['Zero', 'Two']
 ```
 
