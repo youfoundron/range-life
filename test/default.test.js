@@ -38,7 +38,7 @@ describe('Default export', () => {
     'returns an empty array when first argument is an array',
     () => {
       argsToResult([[]], [])
-      argsToResult([1, 2, 3], [])
+      argsToResult([[1, 2, 3]], [])
     }
   )
 
