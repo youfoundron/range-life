@@ -6,6 +6,9 @@
   "repository": "https://github.com/rongierlach/range-life.git",
   "author": "https://github.com/rongierlach",
   "license": "GPL-3.0",
+  "scripts": {
+    "build": "webpack"
+  },
   "config": {
     "commitizen": {
       "path": "cz-conventional-changelog"
