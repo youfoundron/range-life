@@ -17,9 +17,21 @@ const handleNoArgs = transformFunc(
       : next(...args)
 )
 
-const handleNullFirstArg = transformFunc(
+const argsLengthIsOne = (...args) => args.length === 1
+
+const firstArgIsZero = arg => arg === 0
+
+const firstArgIsNumOrString = arg =>
+  ['number', 'string'].includes(typeof arg)
+
+const firstArgIsNoOp = (...args) =>
+  firstArgIsZero(...args) ||
+  !firstArgIsNumOrString(...args)
+
+const handleNoOpFirstArg = transformFunc(
   (next, ...args) =>
-    !['number', 'integer'].includes(typeof args[0])
+    argsLengthIsOne(...args) &&
+    firstArgIsNoOp(...args)
       ? []
       : next(...args)
 )
@@ -61,7 +73,7 @@ const handleDefaults = compose(
   throwIfStepIsOutOfRange,
   throwIfStepIsNotNumber,
   throwIfStartTypeNotEndType,
-  handleNullFirstArg,
+  handleNoOpFirstArg,
   handleNoArgs
 )
 
