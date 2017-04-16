@@ -1,15 +1,24 @@
-import { handleDefaults } from './util'
+import {
+  compose,
+  transformFunc,
+  handleDefaults
+} from './util'
+
+const normalizeParams = transformFunc(
+  (next, start, end, step) => {
+    if (step === undefined) {
+      if (end === undefined) {
+        end = start
+        start = 0
+      }
+      step = start < end ? 1 : -1
+    }
+    return next(start, end, step)
+  }
+)
 
 const range = (start, end, step) => {
   const result = []
-
-  if (step === undefined) {
-    if (end === undefined) {
-      end = start
-      start = 0
-    }
-    step = start < end ? 1 : -1
-  }
 
   if (step === 0) {
     for (let i = start; i < Math.abs(end - start); i++) {
@@ -24,4 +33,7 @@ const range = (start, end, step) => {
   return result
 }
 
-export default handleDefaults(range)
+export default compose(
+  handleDefaults,
+  normalizeParams
+)(range)
