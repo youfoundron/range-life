@@ -7,6 +7,7 @@
   "author": "https://github.com/rongierlach",
   "license": "GPL-3.0",
   "scripts": {
+    "test": "jest",
     "build": "webpack"
   },
   "config": {
@@ -19,12 +20,14 @@
   },
   "devDependencies": {
     "babel-eslint": "^7.2.2",
+    "babel-jest": "^19.0.0",
     "babel-loader": "^6.4.1",
     "babel-plugin-transform-object-rest-spread": "^6.23.0",
     "babel-preset-es2015": "^6.24.1",
     "babel-register": "^6.24.1",
     "commitizen": "^2.9.6",
     "cz-conventional-changelog": "^2.0.0",
+    "jest": "^19.0.2",
     "snazzy": "^7.0.0",
     "standard": "^10.0.2",
     "standard-loader": "^6.0.1",
