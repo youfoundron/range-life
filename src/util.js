@@ -34,15 +34,21 @@ const throwIfStartTypeNotEndType = throwIf(
   TypeError('Arguments \'start\' and \'end\' must be the same type')
 )
 
-const handleDefaults = compose(
-  throwIfStartTypeNotEndType,
-  handleNullFirstArg,
-  handleNoArgs
+const throwIfStepIsNotNumber = throwIf(
+  (...args) => args[2] && typeof args[2] !== 'number',
+  TypeError('Argument \'step\' must be a number')
 )
 
 const throwIfStepIsNotInteger = throwIf(
   (...args) => !Number.isInteger(args[2]),
   TypeError('Argument \'step\' must be an integer')
+)
+
+const handleDefaults = compose(
+  throwIfStepIsNotNumber,
+  throwIfStartTypeNotEndType,
+  handleNullFirstArg,
+  handleNoArgs
 )
 
 export {
