@@ -3,7 +3,7 @@ import {
   transformFunc,
   handleDefaults,
   throwIfStepIsNotInteger
-} from '../util'
+} from './util'
 
 const normalizeValues = transformFunc(
   (next, ...args) =>
