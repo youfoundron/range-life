@@ -16,10 +16,14 @@
   },
   "devDependencies": {
     "babel-eslint": "^7.2.2",
+    "babel-loader": "^6.4.1",
     "babel-plugin-transform-object-rest-spread": "^6.23.0",
     "commitizen": "^2.9.6",
     "cz-conventional-changelog": "^2.0.0",
     "snazzy": "^7.0.0",
-    "standard": "^10.0.2"
+    "standard": "^10.0.2",
+    "standard-loader": "^6.0.1",
+    "webpack": "^2.4.1",
+    "webpack-make-rule": "^2.0.0"
   }
 }
