@@ -45,12 +45,20 @@ const throwIfStepIsNotNumber = throwIf(
   errors.StepIsNotNumber
 )
 
+const throwIfStepIsOutOfRange = throwIf(
+  (...args) =>
+    (args[2] < 0 && args[0] < args[1]) ||
+    (args[2] > 0 && args[0] > args[1]),
+  errors.StepIsOutOfRange
+)
+
 const throwIfStepIsNotInteger = throwIf(
   (...args) => !Number.isInteger(args[2]),
   errors.StepIsNotInteger
 )
 
 const handleDefaults = compose(
+  throwIfStepIsOutOfRange,
   throwIfStepIsNotNumber,
   throwIfStartTypeNotEndType,
   handleNullFirstArg,
