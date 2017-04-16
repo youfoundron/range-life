@@ -1,7 +1,7 @@
 import {
   compose,
   handleDefaults
-} from '../util'
+} from './util'
 
 const range = (start, end, step) => {
 
