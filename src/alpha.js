@@ -2,7 +2,7 @@ import {
   compose,
   handleDefaults,
   throwIfStepIsNotInteger
-} from '../util'
+} from './util'
 
 const range = (start, end, step) => {
 
