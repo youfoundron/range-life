@@ -1,5 +1,6 @@
 /* eslint-disable */
 import range from '../src/index'
+import * as errors from '../src/errors'
 
 const argsToResult = (args, resultArr) =>
   expect(
@@ -49,4 +50,17 @@ describe('Default export', () => {
       argsToResult([undefined], [])
     }
   )
+
+  it('throws if start type is not end type', () => {
+    expect(range.bind(null, 0, 'foo')).toThrowError(errors.StartTypeNotEndType)
+  })
+
+  it('throws if step is not a number', () => {
+    expect(range.bind(null, 0, 4, 'foo')).toThrowError(errors.StepIsNotNumber)
+  })
+
+  it('throws if step is out of range', () => {
+    expect(range.bind(null, 0, 4, -1)).toThrowError(errors.StepIsOutOfRange)
+    expect(range.bind(null, 0, -4, 1)).toThrowError(errors.StepIsOutOfRange)
+  })
 })
