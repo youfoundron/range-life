@@ -1,3 +1,5 @@
+import * as errors from './errors'
+
 const compose = (...funcs) => {
   if (funcs.length === 0) return x => x
   if (funcs.length === 1) return funcs[0]
@@ -30,18 +32,22 @@ const throwIf = (predicate, err = Error()) => transformFunc(
 )
 
 const throwIfStartTypeNotEndType = throwIf(
-  (...args) => args.length > 1 && typeof args[0] !== typeof args[1],
-  TypeError('Arguments \'start\' and \'end\' must be the same type')
+  (...args) =>
+    args.length > 1 &&
+    typeof args[0] !== typeof args[1],
+  errors.StartTypeNotEndType
 )
 
 const throwIfStepIsNotNumber = throwIf(
-  (...args) => args[2] && typeof args[2] !== 'number',
-  TypeError('Argument \'step\' must be a number')
+  (...args) =>
+    args[2] !== undefined &&
+    typeof args[2] !== 'number',
+  errors.StepIsNotNumber
 )
 
 const throwIfStepIsNotInteger = throwIf(
   (...args) => !Number.isInteger(args[2]),
-  TypeError('Argument \'step\' must be an integer')
+  errors.StepIsNotInteger
 )
 
 const handleDefaults = compose(
