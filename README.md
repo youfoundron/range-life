@@ -4,12 +4,7 @@ Supports stepped ranges of integers, decimals, letters, and even a supplied arra
 > "If I had a range life, then I could settle down." - Stephen Malkmus
 
 ## Installation
-`$ npm install range-life`  
-
-You may also use any of range-life's per-method packages:  
-`$ npm install range-life.standard`  
-`$ npm install range-life.alpha`  
-`$ npm install range-life.values`
+`$ npm install range-life`
 
 ## Usage
 
