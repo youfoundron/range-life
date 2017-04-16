@@ -1,52 +1,37 @@
 /* eslint-disable */
 import range from '../src/alpha'
 
-const argsToResult = (args, resultArr) =>
-  expect(
+const argsToResult = (args, resultArr) => {
+  return expect(
     range(...args))
   .toEqual(
     expect.arrayContaining(resultArr))
+}
 
 describe('Alpha export', () => {
   it(
-    'returns an empty array when no arguments are given',
-    () => { argsToResult([], []) }
-  )
-
-  it(
-    'returns an empty array when first and only argument is 0',
-    () => { argsToResult([0], []) }
-  )
-
-  it(
-    'returns an empty array when first argument is boolean',
+    'returns an inclusive array of lowercase letters',
     () => {
-      argsToResult([true], [])
-      argsToResult([false], [])
+      argsToResult(['a', 'e'], ['a', 'b', 'c', 'd', 'e'])
+      argsToResult(['e', 'a'], ['e', 'd', 'c', 'b', 'a'])
     }
   )
 
   it(
-    'returns an empty array when first argument is an object',
+    'returns an inclusive array of uppercase letters',
     () => {
-      argsToResult({}, [])
-      argsToResult({foo: 'bar'}, [])
+      argsToResult(['A', 'E'], ['A', 'B', 'C', 'D', 'E'])
+      argsToResult(['E', 'A'], ['E', 'D', 'C', 'B', 'A'])
     }
   )
 
   it(
-    'returns an empty array when first argument is an array',
+    'returns an inclusive array of integer stepped letters',
     () => {
-      argsToResult([[]], [])
-      argsToResult([1, 2, 3], [])
-    }
-  )
-
-  it(
-    'returns an empty array when first argument is null or undefined',
-    () => {
-      argsToResult([null], [])
-      argsToResult([undefined], [])
+      argsToResult(['a', 'e', 2], ['a', 'c', 'e'])
+      argsToResult(['e', 'a', -2], ['e', 'c', 'a'])
+      argsToResult(['A', 'E', 2], ['A', 'C', 'E'])
+      argsToResult(['E', 'A', -2], ['E', 'C', 'A'])
     }
   )
 })
