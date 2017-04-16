@@ -51,7 +51,7 @@ range('a', 'e')
 range('A', 'E')
 // => ['A', 'B', 'C', 'D', 'E']
 
-range('A', 'E', 1)
+range('A', 'E', 2)
 // => ['A', 'C', 'E')
 
 /* values are exclusive, works the same as ramda's slice */
@@ -60,7 +60,7 @@ const values = ['Zero', 'One', 'Two', 'Three']
 range(1, 3, values)
 // => ['One', 'Two']
 
-range(1, Infinity, 1, values)
+range(1, Infinity, 2, values)
 // => ['Zero', 'Two']
 ```
 
@@ -104,7 +104,7 @@ import range from 'range-life/alpha'
 range('A', 'E')
 // => ['A', 'B', 'C', 'D', 'E']
 
-range('A', 'E', 1)
+range('A', 'E', 2)
 // => ['A', 'C', 'E')
 ```
 
@@ -131,7 +131,7 @@ const values = ['Zero', 'One', 'Two', 'Three']
 range(1, 3, values)
 // => ['One', 'Two']
 
-range(1, Infinity, 1, values)
+range(1, Infinity, 2, values)
 // => ['Zero', 'Two']
 ```
 
