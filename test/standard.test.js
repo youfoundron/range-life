@@ -1,11 +1,8 @@
 /* eslint-disable */
 import range from '../src/standard'
+import {argsToResultFactory} from './util'
 
-const argsToResult = (args, resultArr) =>
-  expect(
-    range(...args))
-  .toEqual(
-    expect.arrayContaining(resultArr))
+const argsToResult = argsToResultFactory(range)
 
 describe('Standard export', () => {
   it(
