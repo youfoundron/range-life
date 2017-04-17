@@ -36,6 +36,11 @@ describe('Alpha export', () => {
     }
   )
 
+  it('handles step of 0', () => {
+    argsToResult(['a', 'c', 0], ['a', 'a', 'a'])
+    argsToResult(['c', 'a', 0], ['c', 'c', 'c'])
+  })
+
   it('throws if step is not an integer', () => {
     expect(range.bind(null, 'a', 'e', 0.5)).toThrowError(errors.StepIsNotInteger)
   })
