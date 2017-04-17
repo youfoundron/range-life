@@ -25,7 +25,7 @@ const normalizeParams = transformFunc(
   }
 )
 
-const range = (startCharCode, endCharCode, step = 1) => {
+const range = (startCharCode, endCharCode, step) => {
   const result = []
 
   if (step === 0) {
