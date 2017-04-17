@@ -1,12 +1,10 @@
 /* eslint-disable */
 import range from '../src/values'
 import * as errors from '../src/errors'
+import {argsToResultFactory, argsToErrorFactory} from './util'
 
-const argsToResult = (args, resultArr) =>
-  expect(
-    range(...args))
-  .toEqual(
-    expect.arrayContaining(resultArr))
+const argsToResult = argsToResultFactory(range)
+const argsToError = argsToErrorFactory(range)
 
 const VALUES = [
   'One', 'Two', 'Three', 'Four', 'Five',
@@ -15,7 +13,6 @@ const VALUES = [
 
 describe('Values export', () => {
   it('throws if step is not an integer', () => {
-    expect(range.bind(null, 0, 4, 0.5, VALUES))
-      .toThrowError(errors.StepIsNotInteger)
+    argsToError([0, 4, 0.5, VALUES], errors.StepIsNotInteger)
   })
 })
