@@ -57,10 +57,10 @@ range('A', 'E', 2)
 /* values are exclusive, works the same as ramda's slice */
 const values = ['Zero', 'One', 'Two', 'Three']
 
-range(1, 3, values)
-// => ['One', 'Two']
+range(0, 3, values)
+// => ['Zero', 'One', 'Two']
 
-range(1, Infinity, 2, values)
+range(0, Infinity, 2, values)
 // => ['Zero', 'Two']
 ```
 
