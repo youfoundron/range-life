@@ -1,13 +1,10 @@
 /* eslint-disable */
 import range from '../src/alpha'
 import * as errors from '../src/errors'
+import {argsToResultFactory, argsToErrorFactory} from './util'
 
-const argsToResult = (args, resultArr) => {
-  return expect(
-    range(...args))
-  .toEqual(
-    expect.arrayContaining(resultArr))
-}
+const argsToResult = argsToResultFactory(range)
+const argsToError = argsToErrorFactory(range)
 
 describe('Alpha export', () => {
   it(
