@@ -1,5 +1,6 @@
 /* eslint-disable */
 import range from '../src/alpha'
+import * as errors from '../src/errors'
 
 const argsToResult = (args, resultArr) => {
   return expect(
@@ -34,4 +35,8 @@ describe('Alpha export', () => {
       argsToResult(['E', 'A', -2], ['E', 'C', 'A'])
     }
   )
+
+  it('throws if step is not an integer', () => {
+    expect(range.bind(null, 'a', 'e', 0.5)).toThrowError(errors.StepIsNotInteger)
+  })
 })
