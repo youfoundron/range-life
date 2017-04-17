@@ -19,19 +19,18 @@ const handleNoArgs = transformFunc(
 
 const argsLengthIsOne = (...args) => args.length === 1
 
-const firstArgIsZero = arg => arg === 0
+const isZero = n => n === 0
 
-const firstArgIsNumOrString = arg =>
+const isNumOrString = arg =>
   ['number', 'string'].includes(typeof arg)
 
-const firstArgIsNoOp = (...args) =>
-  firstArgIsZero(...args) ||
-  !firstArgIsNumOrString(...args)
+const isNoOp = (...args) =>
+  argsLengthIsOne(...args) &&
+  (isZero(args[0]) || !isNumOrString(args[0]))
 
 const handleNoOpFirstArg = transformFunc(
   (next, ...args) =>
-    argsLengthIsOne(...args) &&
-    firstArgIsNoOp(...args)
+    isNoOp(...args)
       ? []
       : next(...args)
 )
