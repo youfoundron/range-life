@@ -1,12 +1,10 @@
 /* eslint-disable */
 import range from '../src/index'
 import * as errors from '../src/errors'
+import {argsToResultFactory, argsToErrorFactory} from './util'
 
-const argsToResult = (args, resultArr) =>
-  expect(
-    range(...args))
-  .toEqual(
-    expect.arrayContaining(resultArr))
+const argsToResult = argsToResultFactory(range)
+const argsToError = argsToErrorFactory(range)
 
 describe('Default export', () => {
   it(
@@ -52,15 +50,15 @@ describe('Default export', () => {
   )
 
   it('throws if start type is not end type', () => {
-    expect(range.bind(null, 0, 'foo')).toThrowError(errors.StartTypeNotEndType)
+    argsToError([0, 'foo'], errors.StartTypeNotEndType)
   })
 
   it('throws if step is not a number', () => {
-    expect(range.bind(null, 0, 4, 'foo')).toThrowError(errors.StepIsNotNumber)
+    argsToError([0, 4, 'foo'], errors.StepIsNotNumber)
   })
 
   it('throws if step is out of range', () => {
-    expect(range.bind(null, 0, 4, -1)).toThrowError(errors.StepIsOutOfRange)
-    expect(range.bind(null, 0, -4, 1)).toThrowError(errors.StepIsOutOfRange)
+    argsToError([0, 4, -1], errors.StepIsOutOfRange)
+    argsToError([0, -4, 1], errors.StepIsOutOfRange)
   })
 })
