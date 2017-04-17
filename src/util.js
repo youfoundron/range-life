@@ -65,7 +65,7 @@ const throwIfStepIsOutOfRange = throwIf(
 )
 
 const throwIfStepIsNotInteger = throwIf(
-  (...args) => !Number.isInteger(args[2]),
+  (...args) => args[2] && !Number.isInteger(args[2]),
   errors.StepIsNotInteger
 )
 
