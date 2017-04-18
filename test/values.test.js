@@ -12,6 +12,21 @@ const VALUES = [
 ]
 
 describe('Values export', () => {
+  it('returns a range of values when no step', () => {
+    argsToResult([0, 4, VALUES], VALUES.slice(0, 4))
+  })
+
+  it('returns a range of values in reverse when no step', () => {
+    argsToResult([4, 0, VALUES], VALUES.slice(1, 4).reverse())
+  })
+
+  it('returns a range of values with a step', () => {
+    argsToResult([0, 4, 1, VALUES], VALUES.slice(0, 4))
+    argsToResult([4, 0, -1, VALUES], VALUES.slice(1, 4).reverse())
+    argsToResult([0, 4, 2, VALUES], ['One', 'Three'])
+    argsToResult([4, 0, -2, VALUES], ['Five', 'Three'])
+  })
+
   it('throws if step is not an integer', () => {
     argsToError([0, 4, 0.5, VALUES], errors.StepIsNotInteger)
   })
