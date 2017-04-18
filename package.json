@@ -6,6 +6,7 @@
   "repository": "https://github.com/rongierlach/range-life.git",
   "author": "https://github.com/rongierlach",
   "license": "GPL-3.0",
+  "keywords": ["range", "number", "letters", "alphabet", "python", "ruby"],
   "scripts": {
     "test": "jest",
     "test:watch": "jest --watch",
