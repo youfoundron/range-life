@@ -40,7 +40,8 @@ range('A', 'E', 2) // => ['A', 'C', 'E']
 const values = ['Zero', 'One', 'Two', 'Three']
 
 range(0, 3, values) // => ['Zero', 'One', 'Two']
-range(0, Infinity, 2, values) // => ['Zero', 'Two']```
+range(0, Infinity, 2, values) // => ['Zero', 'Two']
+```
 
 ## API Reference
 
