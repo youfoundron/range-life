@@ -12,9 +12,7 @@ const transformFunc = transform =>
 
 const handleNoArgs = transformFunc(
   (next, ...args) =>
-    args.length === 0
-      ? []
-      : next(...args)
+    args.length === 0 ? [] : next(...args)
 )
 
 const argsLengthIsOne = (...args) => args.length === 1
@@ -30,9 +28,7 @@ const isNoOp = (...args) =>
 
 const handleNoOpFirstArg = transformFunc(
   (next, ...args) =>
-    isNoOp(...args)
-      ? []
-      : next(...args)
+    isNoOp(...args) ? [] : next(...args)
 )
 
 const throwIf = (predicate, err = Error()) => transformFunc(
