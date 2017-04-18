@@ -1,7 +1,9 @@
 # Range Life
 A range utility that no one asked for.  
 Supports stepped ranges of integers, decimals, letters, and even a supplied array of values.
-> "If I had a range life, then I could settle down." - Stephen Malkmus
+> "If I had a range life, then I could settle down." - Stephen Malkmus  
+
+[![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com) [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
 
 ## Installation
 `$ npm install range-life`
