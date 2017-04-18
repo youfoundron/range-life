@@ -9,7 +9,8 @@
   "scripts": {
     "test": "jest",
     "test:watch": "jest --watch",
-    "build": "webpack"
+    "build": "webpack",
+    "clean": "rimraf lib"
   },
   "config": {
     "commitizen": {
