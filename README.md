@@ -3,7 +3,7 @@ A range utility that no one asked for.
 Supports stepped ranges of integers, decimals, letters, and even a supplied array of values.
 > "If I had a range life, then I could settle down." - Stephen Malkmus  
 
-[![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com) [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
+[![Build Status](https://travis-ci.org/rongierlach/range-life.svg?branch=master)](https://travis-ci.org/rongierlach/range-life) [![Dependency Status](https://david-dm.org/rongierlach/range-life.svg)](https://david-dm.org/rongierlach/range-life) [![devDependency Status](https://david-dm.org/rongierlach/range-life/dev-status.svg)](https://david-dm.org/rongierlach/range-life#info=devDependencies) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com) [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
 
 ## Installation
 `$ npm install range-life`
