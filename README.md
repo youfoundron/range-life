@@ -22,48 +22,35 @@ import rangeValues from 'range-life/values'
 ```javascript
 import range from 'range-life'
 
-range(0)
-// => []
+range(0) // => []
 
-range(4)
-// => [0, 1, 2, 3]
+range(4) // => [0, 1, 2, 3]
 
-range(-4)
-// => [0, -1, -2, -3]
+range(-4) // => [0, -1, -2, -3]
 
-range(1, 5)
-// => [1, 2, 3, 4]
+range(1, 5) // => [1, 2, 3, 4]
 
-range(0, 20, 5)
-// => [0, 5, 10, 15]
+range(0, 20, 5) // => [0, 5, 10, 15]
 
-range(0, -4, -1)
-// => [0, -1, -2, -3]
+range(0, -4, -1) // => [0, -1, -2, -3]
 
-range(1, 4, 0)
-// => [1, 1, 1]
+range(1, 4, 0) // => [1, 1, 1]
 
-range(1, 4, 0.5)
-// => [1, 1.5, 2, 2.5, 3, 3.5]
+range(1, 4, 0.5) // => [1, 1.5, 2, 2.5, 3, 3.5]
 
 /* letters are inclusive */
-range('a', 'e')
-// => ['a', 'b', 'c', 'd', 'e']
+range('a', 'e') // => ['a', 'b', 'c', 'd', 'e']
 
-range('A', 'E')
-// => ['A', 'B', 'C', 'D', 'E']
+range('A', 'E') // => ['A', 'B', 'C', 'D', 'E']
 
-range('A', 'E', 2)
-// => ['A', 'C', 'E']
+range('A', 'E', 2) // => ['A', 'C', 'E']
 
 /* values are exclusive, works the same as ramda's slice */
 const values = ['Zero', 'One', 'Two', 'Three']
 
-range(0, 3, values)
-// => ['Zero', 'One', 'Two']
+range(0, 3, values) // => ['Zero', 'One', 'Two']
 
-range(0, Infinity, 2, values)
-// => ['Zero', 'Two']
+range(0, Infinity, 2, values) // => ['Zero', 'Two']
 ```
 
 ## API Reference
@@ -81,11 +68,9 @@ range(0, Infinity, 2, values)
 ```javascript
 import range from 'range-life/standard'
 
-range(1, 5)
-// => [1, 2, 3, 4]
+range(1, 5) // => [1, 2, 3, 4]
 
-range(0, 20, 5)
-// => [0, 5, 10, 15]
+range(0, 20, 5) // => [0, 5, 10, 15]
 ```
 
 Returns **[Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)&lt;[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)&gt;**
@@ -103,11 +88,9 @@ Returns **[Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Refere
 ```javascript
 import range from 'range-life/alpha'
 
-range('A', 'E')
-// => ['A', 'B', 'C', 'D', 'E']
+range('A', 'E') // => ['A', 'B', 'C', 'D', 'E']
 
-range('A', 'E', 2)
-// => ['A', 'C', 'E']
+range('A', 'E', 2) // => ['A', 'C', 'E']
 ```
 
 Returns **[Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)&lt;[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)&gt;**
@@ -130,11 +113,9 @@ import range from 'range-life/values'
 
 const values = ['Zero', 'One', 'Two', 'Three']
 
-range(1, 3, values)
-// => ['One', 'Two']
+range(1, 3, values) // => ['One', 'Two']
 
-range(1, Infinity, 2, values)
-// => ['Zero', 'Two']
+range(1, Infinity, 2, values) // => ['Zero', 'Two']
 ```
 
 Returns **[Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)&lt;any&gt;**
